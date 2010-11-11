@@ -1,0 +1,25 @@
+%a{:name => "top"}
+%h1#logo-text
+  =link_to("Persistence of Time", root_path)
+%p#slogan Got the time tick, tick, ticking in my head
+#nav
+  %ul
+    %li#current
+      =link_to("Registrar", labors_path)
+    %li
+      =link_to("Semana", week_labors_path)
+    %li
+      =link_to("Mes", month_labors_path)
+    %li
+      =link_to("Actividad", activity_jobs_path)
+    %li
+      =link_to("Persona", activity_users_path)
+    %li
+      =link_to("Acerca de", :controller => 'home', :action => 'about')
+%p#rss
+  ="Hola, #{current_user.name}" if logged_in?
+%form#quick-search{:action => "index.html", :method => "get"}
+  %fieldset.search
+    %label{:for => "qsearch"} Search:
+    %input#qsearch.tbox{:name => "qsearch", :title => "Start typing and hit ENTER", :type => "text", :value => "Search..."}/
+    %button.btn{:title => "Submit Search"} Search

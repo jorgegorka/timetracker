@@ -1,0 +1,11 @@
+%head
+  %title
+    = set_header_title
+  %meta{:content => "application/xhtml+xml; charset=UTF-8", "http-equiv" => "content-type"}/
+  %meta{:content => "La Rioja RB", :name => "author"}/
+  %meta{:content => "Time flies", :name => "description"}/
+  %meta{:content => "index, follow, noarchive", :name => "robots"}/
+  %meta{:content => "noarchive", :name => "googlebot"}/
+  = stylesheet_link_tag 'reset', 'coolblue', 'enhancements', :media => "screen"
+  = javascript_include_tag :defaults
+  = csrf_meta_tag

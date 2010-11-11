@@ -1,0 +1,14 @@
+!!!
+%html{:lang => I18n.locale, "xml:lang" => I18n.locale, :xmlns => "http://www.w3.org/1999/xhtml"}
+  = render :partial => "layouts/header"
+  %body
+    #header-wrap
+      #header
+        =render :partial => "shared/menu"
+    #content-wrap.clear
+      #content
+        #main
+          = yield
+        #sidebar
+          = yield(:sidebar) || render(:partial => "shared/sidebar")
+    = render :partial => "layouts/footer"

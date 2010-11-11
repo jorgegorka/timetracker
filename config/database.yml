@@ -1,0 +1,19 @@
+development:
+  enconding: utf8
+  adapter: mysql
+  database: time_tracker
+  username: root
+  password:
+  host: localhost
+
+test: &test
+  enconding: utf8
+  adapter: mysql
+  database: time_tracker_test
+  username: root
+  password:
+  host: localhost
+
+
+cucumber:
+  <<: *test

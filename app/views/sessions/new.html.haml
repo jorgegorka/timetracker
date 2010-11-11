@@ -1,0 +1,23 @@
+%h1= t('sessions.new.access_your_account')
+- form_tag sessions_path do
+  %p
+    = label_tag :email, User.human_attribute_name(:email)
+    %br/
+    = text_field_tag :email, @email
+  %p
+    = label_tag :password, User.human_attribute_name(:password)
+    %br/
+    = password_field_tag :password, nil
+  %p
+    = label_tag 'remember_me', t('sessions.new.remember_me')
+    = check_box_tag 'remember_me', '1', @remember_me
+  %p= submit_tag t('sessions.new.log_in')
+= set_focus_to_id(:email)
+
+%h2= t('sessions.new.i_forgot_my_password')
+- form_tag change_password_path do
+  %p
+    = label_tag :new_email, User.human_attribute_name(:email)
+    %br/
+    = text_field_tag  :new_email, @email
+  %p= submit_tag t('sessions.new.send_new_password')

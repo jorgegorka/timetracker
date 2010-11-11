@@ -1,0 +1,32 @@
+es:
+  activerecord:
+    models:
+      job:
+        one:   "Proyecto"
+        other: "Proyectos"
+      user:
+        one:   "Usuario"
+        other: "Usuarios"
+      company:
+        one:   "Empresa"
+        other: "Empresas"
+      labor:
+        one:   "Actividad"
+        other: "Actividades"
+    attributes:
+      company:
+        subdomain: "Nombre de dominio"
+        nif: "Nif/Cif"
+        name: "Nombre fiscal"
+        commercial_name: "Nombre comercial"
+        address: "Dirección"
+        place: "Población"
+      job:
+        company_id: "Empresa"
+        title: "Nombre del proyecto"
+      labor:
+        user_id: "Usuario"
+        job_id: "Proyecto"
+        content: "Descripción"
+        sid: "Historia Pivital"
+        pid: "Proyecto Pivotal"

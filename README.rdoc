@@ -1,0 +1,42 @@
+= Time Tracker with Pivotal Tracker support
+
+This project is born as a course for teaching Ruby on Rails to the La Rioja (spain) Ruby group.
+
+We are planning to develop a time tracking application with support for companies, users and projects.  We will also make some integration with Pivotal Tracker in order to start and finish Pivotal Tracker stories from inside our app.  Nevertheless, Pivotal Tracker is not mandatory and you will be able to fully use the app without using Pivotal Tracking.
+
+== Technologies
+
+This is what we are planning to learn and use along the course:
+
+Rails 3
+MySql
+Haml & Sass
+jQuery
+Cucumber
+HTML 5
+CSS
+Git & Github
+RVM
+
+As of this being written the best HTML5 support comes from Chrome so we will test the application with Chrome.  We are planning to degrade gracefully to support other major browers (Safari and Firefox at least).
+
+== Instalation
+
+Clone this application from github
+
+Install all required gems
+
+  bundle install
+
+Install and rename Restfull Authentication plugin
+
+  ruby script/rails plugin install git://github.com/Satish/restful-authentication.git
+  mv vendor/plugins/restful-authentication vendor/plugins/restful_authentication
+
+Create and setup a database for development and another one for testing
+
+  mysqladmin create time_tracker -uroot
+  mysqladmin create time_tracker_test -uroot
+  rake db:migrate
+  rake db:seed #This will populate the database with some default info
+
