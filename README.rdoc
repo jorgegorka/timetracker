@@ -4,6 +4,8 @@ This project is born as a course for teaching Ruby on Rails to the La Rioja (spa
 
 We are planning to develop a time tracking application with support for companies, users and projects.  We will also make some integration with Pivotal Tracker in order to start and finish Pivotal Tracker stories from inside our app.  Nevertheless, Pivotal Tracker is not mandatory and you will be able to fully use the app without using Pivotal Tracking.
 
+== Status: Not functional
+
 == Technologies
 
 This is what we are planning to learn and use along the course:
@@ -22,7 +24,9 @@ As of this being written the best HTML5 support comes from Chrome so we will tes
 
 == Instalation
 
-Clone this application from github
+Clone the application from github
+
+  git clone git://github.com/jorgegorka/timetracker.git
 
 Install all required gems
 
