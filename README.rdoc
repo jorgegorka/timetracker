@@ -39,8 +39,7 @@ Install and rename Restfull Authentication plugin
 
 Create and setup a database for development and another one for testing
 
-  mysqladmin create time_tracker -uroot
-  mysqladmin create time_tracker_test -uroot
+  rake db:create:all
   rake db:migrate
   rake db:seed #This will populate the database with some default info
 

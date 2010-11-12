@@ -1,0 +1,10 @@
+en:
+  public:
+    menu:
+      task: "Daily tasks"
+      week: "Vista semana"
+      month: "Vista mes"
+      activity: "Resumen actividad"
+      person: "Resumen persona"
+      about: "Acerca de"
+      hello: "Hi"
