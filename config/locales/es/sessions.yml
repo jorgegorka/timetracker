@@ -1,0 +1,8 @@
+es:
+  sessions:
+    new:
+      your_access_data: "Introduzca sus datos de acceso"
+      email: "Email"
+      password: "Contraseña"
+      remember_me: "Recordar datos de acceso"
+      log_in: "Acceder a mi cuenta"

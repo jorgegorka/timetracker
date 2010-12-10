@@ -1,0 +1,7 @@
+es:
+  helpers:
+    label:
+      user:
+        name: "Nombre"
+        password: "Contraseña (minimo 6 caracteres)"
+        password_confirmation: "Confirmar contraseña (vuelve a escribir la contraseña)"

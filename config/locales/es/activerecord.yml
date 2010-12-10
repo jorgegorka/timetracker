@@ -30,3 +30,7 @@ es:
         content: "Descripción"
         sid: "Historia Pivital"
         pid: "Proyecto Pivotal"
+      user:
+        email: "Email"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
