@@ -1,6 +1,6 @@
 = Time Tracker with Pivotal Tracker support
 
-This project is born as a course for teaching Ruby on Rails to the La Rioja (spain) Ruby group.
+This project is born as a way of teaching Ruby on Rails to La Rioja (spain) Ruby group.
 
 We are planning to develop a time tracking application with support for companies, users and projects.  We will also make some integration with Pivotal Tracker in order to start and finish Pivotal Tracker stories from inside our app.  Nevertheless, Pivotal Tracker is not mandatory and you will be able to fully use the app without using Pivotal Tracking.
 
