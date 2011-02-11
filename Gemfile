@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.4'
 gem 'mysql'
 gem 'jquery-rails'
 gem "haml"
@@ -15,5 +15,6 @@ group :development, :test do
   gem 'spork'
   gem 'launchy' 
   gem 'factory_girl',                    :require => 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'delorean'
 end

@@ -5,3 +5,5 @@ es:
         name: "Nombre"
         password: "Contraseña (minimo 6 caracteres)"
         password_confirmation: "Confirmar contraseña (vuelve a escribir la contraseña)"
+      company:
+        name: "Nombre que se pone en los formularios"

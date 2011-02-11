@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
-  set_table_name 'users'
+  belongs_to :company
+
+  has_many :labors
 
   #validates :login, :presence   => true,
                     #:uniqueness => true,
@@ -21,7 +23,7 @@ class User < ActiveRecord::Base
                     :format     => { :with => Authentication.email_regex, :message => Authentication.bad_email_message },
                     :length     => { :within => 6..100 }
 
-  before_create :make_activation_code 
+  before_create :make_activation_code
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation

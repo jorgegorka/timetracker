@@ -1,0 +1,8 @@
+es:
+  labors:
+    index:
+      save_changes: "Guardar cambios"
+      start: "Comenzar"
+      total_hours: "Total %{total}"
+      job: "Proyecto"
+      time: "Duración"

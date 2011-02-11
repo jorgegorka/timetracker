@@ -1,0 +1,6 @@
+es:
+  companies:
+    edit:
+      edit_company: "Modificando datos de"
+      save_company: "Guardar datos"
+      successfully: "Compañia guardada correctamente"

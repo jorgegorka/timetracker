@@ -4,7 +4,7 @@
 
   %body
     =render :partial => "shared/menu"
-    = render_flash_messages
+    =raw render_flash_messages
     %section#content.body
       = yield
     %section#extras.body

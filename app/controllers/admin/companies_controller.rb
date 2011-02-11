@@ -1,23 +1,19 @@
 class Admin::CompaniesController < Admin::AdminController
 
-  def index
-    redirect_to admin_company_path(current_user.company)
-  end
-  def show
-    @company = current_user.company
-  end
-
-  def edit
-    @company = current_user.company
-  end
+  before_filter :find_company, :except => :index
 
   def update
-    @company = current_user.company
-
     if @company.update_attributes(params[:company])
-      redirect_to(admin_company_path(@company), :notice => t('companies.admin.edit.successfully'))
+      redirect_to(admin_company_path(@company), :notice => t('companies.edit.successfully'))
     else
       render :action => 'edit'
     end
   end
+
+  protected
+
+  def find_company
+    @company = current_user.company
+  end
+
 end

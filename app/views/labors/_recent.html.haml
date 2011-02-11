@@ -1,0 +1,22 @@
+.post
+  .right
+    %h2
+      =h("#{recent.job.title} - #{recent.content}")
+    %p.post_content
+      El perro de san roque
+    .post-meta
+      %ul
+        %li.time
+          =link_to((recent.start_at.present? ? "Detener" : "Reanudar"), toggle_end_labor_path(recent))
+        %li.user
+          =button_to("Finalizar", finish_labor_path(recent)) if recent.has_story?
+        %li.comment
+          =link_to_if((!recent.start_at.present?), "Modificar", labors_path(:id => recent.id))
+        %li.permalink
+          =link_to("Borrar", labor_path(recent), :method => :delete, :confirm => "Estás seguro?")
+  .left
+    %p.dateinfo
+      = recent.created_at.strftime('%b')
+      = recent.created_at.strftime('%d')
+      %span
+        ="#{recent.hours}:#{recent.minutes}"

@@ -1,0 +1,20 @@
+%h1= "#{@date.strftime('%A, %d %b %Y')} #{t('labors.index.total_hours', :total => @total)}"
+= error_messages_for :labor
+-form_for(@labor) do |f|
+  =hidden_field_tag :date, params[:date]
+  =label_tag :job, t('labors.index.job')
+  =text_field_tag :job, (@labor.job.title if @labor.job.present?)
+  =label_tag :time, t('labors.index.time')
+  =text_field_tag :time, @labor.saved_hours, :size => 10
+  %br/
+  =f.label :content, Labor.human_attribute_name(:content)
+  =f.text_field :content, :size => 80
+  =f.submit((@labor.id.present? ? t('labors.index.save_changes') : t('labors.index.start')), :class => "button")
+= set_focus_to_id('#job')
+=render :partial => 'recent', :collection => @recents
+-content_for :sidebar do
+  .popular
+    %h3 Historias
+    - if @project.present?
+      =link_to_remote("Ver historias pendientes", :url => show_stories_labors_path, :update => "pt_stories")
+      #pt_stories

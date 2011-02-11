@@ -1,0 +1,15 @@
+%h1
+  = "#{t('companies.edit.edit_company')} #{@company.name}"
+
+= form_for [:admin, @company] do |c|
+  = error_messages_for :company
+  %p
+    = c.label :name
+    %br/
+    = c.text_field :name
+  %p
+    = c.label :address
+    %br/
+    = c.text_field :address
+  %p
+    = c.submit t('companies.edit.save_company')
