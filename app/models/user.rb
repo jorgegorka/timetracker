@@ -30,25 +30,6 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
 
-
-  # Activates the user in the database.
-  def activate!
-    @activated = true
-    self.activated_at = Time.now.utc
-    self.activation_code = nil
-    save(:validate => false)
-  end
-
-  # Returns true if the user has just been activated.
-  def recently_activated?
-    @activated
-  end
-
-  def active?
-    # the existence of an activation code means they have not activated yet
-    activation_code.nil?
-  end
-
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
   # uff.  this is really an authorization, not authentication routine.  
@@ -61,12 +42,33 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
 
-  def login=(value)
-    write_attribute :login, (value ? value.downcase : nil)
+  # Activates the user in the database.
+  def activate!
+    @activated = true
+    self.activated_at = Time.now.utc
+    self.activation_code = nil
+    save(:validate => false)
+  end
+
+  def active?
+    # the existence of an activation code means they have not activated yet
+    activation_code.nil?
   end
 
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
+  end
+
+  def is_admin?
+    admin
+  end
+
+  def login=(value)
+    write_attribute :login, (value ? value.downcase : nil)
+  end
+
+  def recently_activated?
+    @activated
   end
 
   protected

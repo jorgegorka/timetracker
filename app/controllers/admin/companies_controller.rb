@@ -2,6 +2,10 @@ class Admin::CompaniesController < Admin::AdminController
 
   before_filter :find_company, :except => :index
 
+  def index
+    redirect_to :show
+  end
+
   def update
     if @company.update_attributes(params[:company])
       redirect_to(admin_company_path(@company), :notice => t('companies.edit.successfully'))

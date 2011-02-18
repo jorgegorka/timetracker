@@ -1,0 +1,14 @@
+%header{:id => "banner", :class => "body"}
+  %p
+    =link_to(current_user.present? ? current_user.company.commercial_name : "TimeTracker", root_path)
+  %nav
+    %ul
+      %li{:class => "active"}
+        =link_to("Proyectos", jobs_path)
+      %li Contactar
+      %li Contactar
+      %li Contactar
+      - if current_user.present? and current_user.is_admin?
+        %li
+          =link_to("Mi empresa", admin_company_path(current_user.company))
+

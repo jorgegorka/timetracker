@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Timetracker::Application.config.secret_token = '9d6ece885522e6ccb716b3d9674023982e7b48765fd8c5321386cee8f8a75b862b5dd571a0de58145259a862b0d6c9114c2af8a563eec170fa22a88f905c3ab2'
+Timetracker::Application.config.secret_token = 'cd575e19bb5062eca1eac9fdb16b8d7c73c5c2e8cb341f907f58ad8ef9528bbf7e721d289011ad13cceaecd27ccd10f9349961d9ea3b2128e65438c1bbda418e'

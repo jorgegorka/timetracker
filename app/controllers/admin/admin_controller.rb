@@ -8,7 +8,7 @@ class Admin::AdminController < MemberController
     if current_user.admin
       return true
     else
-      redirect_to(root_url, :error => t('companies.admin.wrong_permission')) and return false
+      redirect_to(root_url, :alert => t('companies.admin.wrong_permission')) and return false
     end
   end
 

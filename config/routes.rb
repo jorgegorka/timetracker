@@ -1,12 +1,9 @@
 Timetracker::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  resource  :session
 
   namespace :admin do
-    resources :companies
+    resources  :companies
   end
-
-  resource  :session
 
   resources :users do
     collection do
@@ -32,7 +29,25 @@ Timetracker::Application.routes.draw do
       post 'show_stories'
     end
   end
+  match 'about' => "home#about"
+  root :to => "labors#index"
+  match 'login'  => 'sessions#new', :as => :login
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'signup' => 'users#new', :as => :signup
+  match 'activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
+
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
+
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
 
   # Sample resource route with options:
   #   resources :products do
@@ -69,13 +84,7 @@ Timetracker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  match 'about' => "home#about"
-  root :to => "labors#index"
-
-  match 'login'  => 'sessions#new', :as => :login
-  match 'logout' => 'sessions#destroy', :as => :logout
-  match 'signup' => 'users#new', :as => :signup
-  match 'activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil
+  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 

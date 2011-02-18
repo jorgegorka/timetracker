@@ -3,4 +3,6 @@ es:
     edit:
       edit_company: "Modificando datos de"
       save_company: "Guardar datos"
-      successfully: "Compañia guardada correctamente"
+      successfully: "Compañia actualizada correctamente"
+    admin:
+      wrong_permission: "No tienes permiso para acceder a esta página"

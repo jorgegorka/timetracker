@@ -120,8 +120,8 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 }
 
 /* Banner */
-#banner h1 {font-size: 3.571em; line-height: .6;}
-#banner h1 a:link, #banner h1 a:visited {
+#banner p {font-size: 3.571em; line-height: .6;}
+#banner p a:link, #banner p a:visited {
   color: #000305;
   display: block;
   font-weight: bold;
@@ -129,7 +129,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
   text-decoration: none;
   width: 750px;
 }
-#banner h1 a:hover, #banner h1 a:active {
+#banner p a:hover, #banner p a:active {
   background: none;
   color: #C74350;
   text-shadow: none;
